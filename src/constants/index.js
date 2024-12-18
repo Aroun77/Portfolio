@@ -1,7 +1,7 @@
 import project1 from "../assets/projects/projets.png";
 import project2 from "../assets/projects/IG.png";
-import project3 from "../assets/projects/projets.png";
-import project4 from "../assets/projects/projets.png";
+import project3 from "../assets/projects/CM.png";
+import project4 from "../assets/projects/EN.png";
 import { link } from "framer-motion/client";
 
 export const HERO_CONTENT = `Étudiant en conception et développement d'applications à Ada Tech School, je recherche une alternance en développement web full stack en région d’Ile-de-France. Motivé par les nouvelles technologies et passionné par le développement informatique, je souhaite m'impliquer dans la conception, le développement, le déploiement et la maintenance de solutions web ou mobiles. Cette alternance me permettra d'acquérir une première expérience professionnelle et de concrétiser mon projet professionnel.`;
@@ -43,14 +43,14 @@ export const Projects = [
   },
   {
     title: "PLATEFORME DE VENTE DE MEUBLES | AVRIL 2024",
-    link:"",
+    link:"https://github.com/Aroun77/LeComptoir",
     image: project1,
     description: "Projet de création d'une plateforme de gestion pour un magasin de meubles, en développant une architecture robuste avec un système de gestion des utilisateurs et des droits d'accès",
     technologies: ["React","Javascript","Express",  "Chakra ui" , "Supabase (API)",],
   },
   {
     title: "EXTENSION NAVIGATEUR | JAN 2024",
-    link:"",
+    link:"https://github.com/Aroun77/extension-navigateur",
     image: project4,
     description:
     "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
