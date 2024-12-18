@@ -21,10 +21,10 @@ const Projets = () => {
           initial={{opacity: 0 , x: -100}}
           transition={{duration:0.5}}
 
-          className="w-full lg:w-1/4">
+          className="w-full lg:w-1/4"> 
           <img src={Project.image}  
-          width={150}  
-          height={150}  
+          width={200}  
+          height={200}  
           alt={Project.title}
           className="mb-6 rounded"
         />
