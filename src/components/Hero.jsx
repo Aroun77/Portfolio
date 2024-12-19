@@ -51,7 +51,7 @@ const container = (delay) => ({
                 <motion.img initial={{x:100, opacity: 0}}
                 animate={{x: 0 , opacity: 1}}
                 transition={{duration : 1, delay : 1.2}}
-                 className="rounded-3xl" src={profilePic} alt="Aroun Gnanavelan" style={{width: '450px', height:'auto'}} />
+                 /*className="rounded-3xl" src={profilePic} alt="Aroun Gnanavelan" style={{width: '450px', height:'auto'}}*/ />
                 </div>
             </div>
             

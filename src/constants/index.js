@@ -67,7 +67,7 @@ export const Projects = [
 ];
 
 export const CONTACT = {
-  address: "Adress : 14 Rue De La Gironnette, Meaux 77100 ",
+  address: "Adresse : Seine et Marne , île de France",
   phoneNo: " Mobile : 0767769296 ",
   email: "gnanavelan.aroun@gmail.com",
 };
