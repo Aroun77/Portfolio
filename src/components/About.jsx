@@ -1,10 +1,11 @@
 import aboutImg from "../assets/aboutme.png";
 import { ABOUT_TEXT } from "../constants";
 import { motion } from "framer-motion";
+import cvFile from "../assets/projects/CV.pdf"
 
 const About = () => {
   const handleDownloadCV = () => {
-    window.open("src/assets/projects/CV.pdf", "_blank");
+    window.open(cvFile, "_blank");
   };
 
   return (
