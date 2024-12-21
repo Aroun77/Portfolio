@@ -5,8 +5,7 @@ import Technologies from "./components/Technologies";
 import Experianceandproject from "./components/Experianceandproject"
 import Projets from "./components/Projets"
 import Contact from "./components/Contact";
-import { SpeedInsights } from "@vercel/speed-insights/next"
-
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 const App = () => {
   return (
