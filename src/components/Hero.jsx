@@ -1,63 +1,85 @@
-import {HERO_CONTENT} from "../constants/index.js";
-import profilePic from "../assets/AG2.png"
-import { motion } from "framer-motion"
+import React, { useState } from "react";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, Text } from "@react-three/drei";
+import { HERO_CONTENT } from "../constants/index.js";
+import { motion } from "framer-motion";
 
+// Texte 3D interactif avec effets
+const InteractiveText3D = () => {
+  const [hovered, setHovered] = useState(false);
 
+  return (
+    <mesh
+      onPointerOver={() => setHovered(true)} // Détecte le survol
+      onPointerOut={() => setHovered(false)} // Détecte lorsque la souris quitte
+    >
+      <Text
+        fontSize={2} // Taille du texte
+        color={hovered ? "#ff6347" : "#6363ee"} // Change la couleur en fonction du survol
+        anchorX="center" // Centrer horizontalement
+        anchorY="middle" // Centrer verticalement
+        rotation={[0, hovered ? Math.PI / 4 : 0, 0]} // Rotation lors du survol
+      >
+        Aroun Gnanavelan
+      </Text>
+    </mesh>
+  );
+};
 
+// Animation du container
 const container = (delay) => ({
-    hidden: {x: -100, opacity: 0 },
-    visible: {
-        x: 0, 
-        opacity: 1,
-        transition: {duration: 0.5, delay: delay },
-
-    }, 
+  hidden: { x: -100, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.5, delay: delay },
+  },
 });
 
- 
- const Hero = () => {
+const Hero = () => {
   return (
-    <div className="border-b border-neutral-neutral-900 pb-4 lg:mb-35">
-        <div className="flex flex-wrap">
-            <div className="w-full lg:w-1/2">
-            <div className="flex-col text-center">
-                <motion.h1   
-                variants={container(0)}
-                initial="hidden"
-                animate="visible"
-                className="pb-16 text-6xl font-thin tracking-tight lg:mt-16 lg-text-8xl "
-                >
-                Aroun Gnanavelan
-                </motion.h1>
-                <motion.span 
-                variants={container(0.5)}
-                initial="hidden"
-                animate="visible"
-                className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent "
-                >
-                 Full stack Developer
-                  </motion.span>
-                <motion.p 
-                variants={container(1)}
-                initial="hidden"
-                animate="visible"
-                className=" flex flex-col text-center text-xl my-4 max-xl py-6 font-light tracking-tighter ">
-                    {HERO_CONTENT}
-                    </motion.p>
-                </div>
-            </div>
-            <div className="w-full lg:w-1/2 lg:p-8">
-           <div className="flex justify-center">
-                <motion.img initial={{x:100, opacity: 0}}
-                animate={{x: 0 , opacity: 1}}
-                transition={{duration : 1, delay : 1.2}}
-                 /*className="rounded-3xl" src={profilePic} alt="Aroun Gnanavelan" style={{width: '450px', height:'auto'}}*/ />
-                </div>
-            </div>
-            
+    <div className="border-b border-neutral-neutral-900 pb-8 lg:mb-35">
+      <div className="flex flex-col lg:flex-row">
+        {/* Colonne texte 3D */}
+        <div className="w-full p-4 mb-8 lg:mb-0">
+          <div className="flex justify-center">
+            {/* Texte 3D interactif */}
+            <Canvas style={{ height: "300px", width: "100%" }}>
+              {/* Lumières */}
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[10, 10, 5]} intensity={1} />
+
+              {/* Texte 3D interactif */}
+              <InteractiveText3D />
+
+              {/* Contrôles de caméra pour interagir avec la souris */}
+              <OrbitControls />
+            </Canvas>
+          </div>
         </div>
+
+        {/* Colonne texte animé */}
+        <div className="w-full flex flex-col items-center justify-center text-center mt-8 lg:mt-0 lg:w-1/2">
+          <motion.span
+            variants={container(0.5)}
+            initial="hidden"
+            animate="visible"
+            className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl lg:text-5xl font-bold tracking-tight text-transparent"
+          >
+            Full Stack Developer
+          </motion.span>
+          <motion.p
+            variants={container(1)}
+            initial="hidden"
+            animate="visible"
+            className="text-xl lg:text-2xl my-4 max-w-lg py-6 font-light tracking-tighter"
+          >
+            {HERO_CONTENT}
+          </motion.p>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Hero; 
+export default Hero;

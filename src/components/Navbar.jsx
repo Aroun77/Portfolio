@@ -51,15 +51,15 @@ const Navbar = () => {
           </motion.div>
           </a>
           </div>
-          <div>  <a href="https://www.instagram.com/aroun.gvln/">
+          {/*<div>  <a href="https://www.instagram.com/aroun.gvln/">
         <motion.div
           variants={iconVariants(3)} 
           iniatial= "iniatial"
           animate="animate">
           <FaInstagram/></motion.div>
           </a>
-          </div>
-          <div> <a href="https://x.com/home?lang=fr">
+          </div>/*/}
+         {/* <div> <a href="https://x.com/home?lang=fr">
        <motion.div
        variants={iconVariants(2)} 
        iniatial= "iniatial"
@@ -67,7 +67,7 @@ const Navbar = () => {
 
        <FaSquareXTwitter/></motion.div>
        </a>
-       </div>
+       </div>*/}
       </motion.div>
     </nav>
    );
