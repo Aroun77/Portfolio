@@ -1,24 +1,35 @@
-import React, { useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { useState, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Text } from "@react-three/drei";
 import { HERO_CONTENT } from "../constants/index.js";
 import { motion } from "framer-motion";
 
+
 // Texte 3D interactif avec effets
 const InteractiveText3D = () => {
   const [hovered, setHovered] = useState(false);
+  const textRef = useRef(); // Référence du texte 3D
+
+  // Animation continue du texte 3D
+  useFrame(() => {
+    if (textRef.current) {
+      textRef.current.rotation.y += 0.01; // Rotation continue sur l'axe Y
+      textRef.current.position.x = Math.sin(textRef.current.rotation.y) * 2; // Déplacement sur l'axe X
+    }
+  });
 
   return (
     <mesh
+      ref={textRef}
       onPointerOver={() => setHovered(true)} // Détecte le survol
       onPointerOut={() => setHovered(false)} // Détecte lorsque la souris quitte
     >
       <Text
-        fontSize={2} // Taille du texte
+        fontSize={1} // Taille du texte
         color={hovered ? "#ff6347" : "#6363ee"} // Change la couleur en fonction du survol
         anchorX="center" // Centrer horizontalement
         anchorY="middle" // Centrer verticalement
-        rotation={[0, hovered ? Math.PI / 4 : 0, 0]} // Rotation lors du survol
+        rotation={[0, 0, 0]} // Rotation initiale
       >
         Aroun Gnanavelan
       </Text>
@@ -51,6 +62,7 @@ const Hero = () => {
 
               {/* Texte 3D interactif */}
               <InteractiveText3D />
+            
 
               {/* Contrôles de caméra pour interagir avec la souris */}
               <OrbitControls />
