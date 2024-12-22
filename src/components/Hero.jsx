@@ -26,7 +26,7 @@ const InteractiveText3D = () => {
     >
       <Text
         fontSize={1} // Taille du texte
-        color={hovered ? "#ff6347" : "#6363ee"} // Change la couleur en fonction du survol
+        color={hovered ? "#b01a00" : "#6363ee"} // Change la couleur en fonction du survol
         anchorX="center" // Centrer horizontalement
         anchorY="middle" // Centrer verticalement
         rotation={[0, 0, 0]} // Rotation initiale
@@ -49,7 +49,7 @@ const container = (delay) => ({
 
 const Hero = () => {
   return (
-    <div className="border-b border-neutral-neutral-900 pb-8 lg:mb-35">
+    <div className="border-b border-neutral-600 pb-16">
       <div className="flex flex-col lg:flex-row">
         {/* Colonne texte 3D */}
         <div className="w-full p-4 mb-8 lg:mb-0">
