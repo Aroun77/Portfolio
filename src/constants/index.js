@@ -46,7 +46,7 @@ export const Projects = [
     link:"https://github.com/Aroun77/LeComptoir",
     image: project1,
     description: "Projet de création d'une plateforme de gestion pour un magasin de meubles, en développant une architecture robuste avec un système de gestion des utilisateurs et des droits d'accès",
-    technologies: ["React","Javascript","Express",  "Chakra ui" , "Supabase (API)",],
+    technologies: ["React","Javascript","nodejs+Express",  "Chakra ui" , "Supabase (API)",],
   },
   {
     title: "EXTENSION NAVIGATEUR | JAN 2024",
@@ -63,6 +63,14 @@ export const Projects = [
     description:
       "Création d'un site web qui centralise plusieurs informations sur le thème du fitness (bien être, santé, musculation, crossfit...).",
     technologies: ["HTML", "CSS","Javascript",],
+  },
+  {
+    title: "IRON GYM V2| EN COURS",
+    link: "https://iron-gym-five.vercel.app/",
+    image: project3,
+    description:
+      "Création d'un site web qui centralise plusieurs informations sur le thème du fitness (bien être, santé, musculation, crossfit...).",
+    technologies: ["React", "TailwindCss"," Framer Motion"," React Hook Form","Nodejs+Express","supabase","NextAuth.js"," Stripe",],
   },
 ];
 
