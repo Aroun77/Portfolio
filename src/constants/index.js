@@ -57,7 +57,7 @@ export const Projects = [
     technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
   },
   {
-    title: "IRON GYM | OCT 2022",
+    title: "IRON GYM V1 | OCT 2022",
     link: "https://iron-gym-five.vercel.app/",
     image: project2,
     description:
@@ -65,11 +65,11 @@ export const Projects = [
     technologies: ["HTML", "CSS","Javascript",],
   },
   {
-    title: "IRON GYM V2| EN COURS",
-    link: "https://iron-gym-five.vercel.app/",
+    title: "IRON GYM V2 | AVR 2025 (EN COURS)",
+    link: "https://github.com/Aroun77/Iron-gym-V2",
     image: project3,
     description:
-      "Création d'un site web qui centralise plusieurs informations sur le thème du fitness (bien être, santé, musculation, crossfit...).",
+      "Version V2 du site Iron Gym, avec une interface utilisateur améliorée et des fonctionnalités avancées.",
     technologies: ["React", "TailwindCss"," Framer Motion"," React Hook Form","Nodejs+Express","supabase","NextAuth.js"," Stripe",],
   },
 ];
